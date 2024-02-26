@@ -6,10 +6,19 @@
   --header-height: 64px;
   --color-dark: #000;
   --color-light: #fff;
+  --cti-blue: #0D3B66;
+  --cti-turquois: #00A9A5;
+  --cti-gold: #FFBA49;
 }
 
 img {
   border-radius: 4px;
+}
+
+body {
+  background-image: url("public/images/CTi_home_Main_Nav_Background_2023.png");
+  background-size:cover;
+  background-attachment: fixed;
 }
 
 /*
@@ -44,10 +53,12 @@ aside header h3 {
 
 aside header .close {
   font-weight: bold;
-  opacity: 0.8;
+  opacity: 1;
   text-decoration: none;
   transition: all 200ms;
-  width: 20px;
+  width: 40px;
+  font-size:22px;
+  color:#fff;
 }
 
 aside header .close:hover {
@@ -117,6 +128,10 @@ aside li {
   pointer-events: auto;
   visibility: visible;
 }
+.overlay header {
+  background-color:var(--cti-blue);
+  color:#fff;
+}
 /* reveal aside */
 .overlay:target aside {
   transform: translateX(calc(var(--aside-width) * -1));
@@ -129,13 +144,18 @@ aside li {
 */
 .header {
   align-items: center;
-  background: #fff;
+  background: none;
   display: flex;
   height: var(--header-height);
   padding: 0 1rem;
   position: sticky;
   top: 0;
   z-index: 1;
+}
+.header img{
+  width: 20%;
+  padding:0;
+  margin:0;
 }
 
 .header-menu-mobile-toggle {
@@ -163,12 +183,16 @@ aside li {
 .header-menu-item {
   cursor: pointer;
 }
+.header-menu-item a {
+  color:var(--cti-blue);
+}
 
 .header-ctas {
   align-items: center;
   display: flex;
   grid-gap: 1rem;
   margin-left: auto;
+  
 }
 
 /*
@@ -177,8 +201,9 @@ aside li {
 * --------------------------------------------------
 */
 .footer {
-  background: var(--color-dark);
+  background: var(--cti-blue);
   margin-top: auto;
+  width:100%;
 }
 
 .footer-menu-missing {
@@ -190,23 +215,75 @@ aside li {
   align-items: center;
   display: flex;
   grid-gap: 1rem;
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width:90%;
 }
 
 .footer-menu a {
   color: var(--color-light);
+  padding-left: 1rem;
 }
+
+.policy-links a {
+  display: inline-block;
+  margin-right:5em;
+  
+}
+.StoreCopyright {
+  
+  position:relative;
+  float:right;
+  color:#fff;
+  left:40%;
+  
+  
+}
+
 
 /*
 * --------------------------------------------------
 * components/Cart
 * --------------------------------------------------
 */
+.continueToCheckoutBtn p{
+  background-color: var(--cti-blue);
+  border: none;
+  border-radius: 5px;
+  padding: .5em;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+.continueToCheckoutBtn p:hover{
+  background-color: var(--cti-turquois);
+  cursor: pointer;
+}
+.continueToCheckoutBtn:hover {
+  text-decoration:none;
+}
+.removeButton {
+  background-color:#f00;
+  border: none;
+  color:#fff;
+  width:100%;
+  padding:.5em;
+  border-radius: 5px;
+}
+.removeButton:hover {
+  background-color: #000;
+  cursor:pointer;
+}
 .cart-main {
   height: 100%;
   max-height: calc(100vh - var(--cart-aside-summary-height));
   overflow-y: auto;
   width: auto;
+}
+
+.cart-main p {
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .cart-main.with-discount {
@@ -239,6 +316,9 @@ aside li {
 
 .cart-line-quantiy {
   display: flex;
+}
+.cart-line-quantity small {
+  font-size: 22px;
 }
 
 .cart-discount {
@@ -320,7 +400,18 @@ aside li {
   max-height: 100%;
   object-fit: cover;
 }
-
+.recommended-products {
+  width: 50%;
+  margin-left:25%;
+  margin-right:25%;
+  align-items: center;
+  text-align: center;
+  margin-top:1.5em;
+}
+.recommended-products h2 {
+  font-size:24px;
+  padding:2%;
+}
 .recommended-products-grid {
   display: grid;
   grid-gap: 1.5rem;
@@ -332,6 +423,7 @@ aside li {
 
 .recommended-product img {
   height: auto;
+  width: 50%;
 }
 
 /*
@@ -355,12 +447,54 @@ aside li {
 * routes/collections.$handle.tsx
 * --------------------------------------------------
 */
+
+.collections h1 {
+  background-color: var(--cti-blue);
+  color: var(--cti-gold);
+  font-size:32px;
+  text-transform:uppercase;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.collections h5 {
+  font-size:22px;
+  color: var(--cti-blue);
+  text-align:center;
+}
 .collection-description {
   margin-bottom: 1rem;
   max-width: 95%;
   @media (min-width: 45em) {
     max-width: 600px;
   }
+}
+.products-container-2 {
+  max-width:50rem;
+  
+  
+}
+
+.products-container-2-grid {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: 100% 100%;
+  width:50%;
+  margin-bottom: 2rem;
+}
+
+.products-container-2-grid h4{
+  font-size:28px;
+  text-align:center;
+}
+.products-container-2-grid small {
+  font-size:24px;
+  text-align:center;
+}
+.products-grid-container {
+  width: 25%;
+  height: auto;
 }
 
 .products-grid {
@@ -391,14 +525,22 @@ aside li {
 .product h1 {
   margin-top: 0;
 }
-
+.product-image-container {
+  width:300px;
+  height:500px;
+  padding-left:15%;
+  padding-right:0;
+  padding-top:15%;
+}
 .product-images {
   display: grid;
+  height: 100%;
   grid-gap: 1rem;
+  grid-template-rows: 100%;
 }
 
 .product-image img {
-  height: auto;
+  height: 100%;
   width: 100%;
 }
 
@@ -406,6 +548,21 @@ aside li {
   align-self: start;
   position: sticky;
   top: 6rem;
+  background-color:bisque;
+  padding: 2rem;
+  border-radius: 5px;
+}
+.product-main h1 {
+  background-color: var(--cti-blue);
+  text-align:center;
+  font-size:28px;
+  color: var(--cti-gold);
+  padding: 1rem;
+  border-radius: 5px;
+}
+.product-price {
+  font-size:22px;
+  font-weight: 700;
 }
 
 .product-price-on-sale {
@@ -421,10 +578,30 @@ aside li {
   display: flex;
   flex-wrap: wrap;
   grid-gap: 0.75rem;
+  
 }
 
 .product-options-item {
   padding: 0.25rem 0.5rem;
+  background-color:#000;
+  color:#fff;
+}
+
+.product-form button {
+  background-color: var(--cti-turquois);
+  color:#fff;
+  font-weight: 700;
+  font-size:18px;
+  width: 100%;
+  border: none;
+  padding: 1em;
+  border-radius: 5px;
+  
+}
+
+.product-form button:hover {
+  background-color: var(--cti-blue);
+  cursor: pointer;
 }
 
 /*
@@ -470,4 +647,75 @@ aside li {
 
 .account-logout {
   display: inline-block;
+}
+
+/*
+* --------------------------------------------------
+* Collection Cards on Home Page
+* --------------------------------------------------
+*/
+
+.card {
+  
+}
+.collection h1 {
+  background-color: var(--cti-blue);
+  padding:1em;
+  text-align:center;
+  border-radius: 5px;
+  color: var(--cti-gold);
+  text-transform:uppercase;
+  font-size:32px;
+}
+.Collection-Banner {
+  background-color: rgba(0, 169, 165, 0.4);
+  margin-top:2%;
+  width: 100%;
+  text-align:center;
+  border-radius: 10px;
+}
+.Collection-Banner h1 {
+  font-size:32px;
+  color: var(--cti-blue);
+  font-weight: 700;
+  padding-top:2%;
+}
+
+.Collection-Card-Area {
+  display:flex;
+  justify-content:space-evenly;
+  padding-bottom:2%;
+}
+
+.collection-card {
+  width: 100%;
+  height: auto;
+  color: var(--cti-blue);
+  text-align:center;
+  align-items: center;
+}
+.colleciton-card a {
+  text-decoration:none;
+}
+.collection-card h2:hover{
+  text-decoration: none;
+}
+
+.collection-card h2 {
+  font-size: 22px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight:bold;
+  text-align:center;
+  
+}
+.collection-card h4 {
+  font-size:18px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 500;
+  text-align:center;
+  
+}
+.collection-card img {
+  width:150px;
+  height:150px;
 }
