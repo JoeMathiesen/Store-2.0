@@ -71,19 +71,38 @@ export default function Collection() {
  * @param {{products: ProductItemFragment[]}}
  */
 function ProductsGrid({products}) {
+  if (products.length < 3) {
   return (
-    <div className="products-grid">
-      {products.map((product, index) => {
-        return (
-          <ProductItem
-            key={product.id}
-            product={product}
-            loading={index < 8 ? 'eager' : undefined}
-          />
-        );
-      })}
-    </div>
+    <div className="products-container-2">
+        <div className="products-container-2-grid">
+          {products.map((product, index) => {
+            return (
+              <ProductItem
+                key={product.id}
+                product={product}
+                loading={index <0 ? 'eager': undefined}
+              />
+            );
+          })}
+        </div>
+      </div>
   );
+}
+
+else
+{
+  <div className="products-grid">
+        {products.map((product, index) => {
+          return (
+            <ProductItem
+              key={product.id}
+              product={product}
+              loading={index < 8 ? 'eager' : undefined}
+            />
+          );
+        })}
+      </div>
+}
 }
 
 /**

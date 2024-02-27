@@ -88,16 +88,3 @@ function Logout() {
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
 /** @typedef {import('@shopify/remix-oxygen').SerializeFrom<typeof loader>} LoaderReturnData */
-
-/*import { PublicClientApplication } from "@azure/msal-browser";
-
-const msalConfig = {
-  auth: {
-    clientId: '29dd8d74-eca8-419d-b221-9756616c9fda',
-    authority: 'https://login.microsoft.com/cc702a4a-fdc0-4c82-970f-5699766cee82',
-    redirectUri: 'https://localhost:3000/signin-oidc'
-  }
-};
-
-const msalInstance = new PublicClientApplication(msalConfig);
-await msalInstance.initialize(); */

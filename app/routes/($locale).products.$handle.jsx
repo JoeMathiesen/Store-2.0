@@ -126,7 +126,9 @@ function ProductImage({image}) {
     return <div className="product-image" />;
   }
   return (
+    <div className="product-image-container">
     <div className="product-image">
+      
       <Image
         alt={image.altText || 'Product Image'}
         aspectRatio="1/1"
@@ -134,6 +136,8 @@ function ProductImage({image}) {
         key={image.id}
         sizes="(min-width: 45em) 50vw, 100vw"
       />
+      
+    </div>
     </div>
   );
 }

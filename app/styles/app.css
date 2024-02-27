@@ -526,14 +526,15 @@ aside li {
   margin-top: 0;
 }
 .product-image-container {
-  width:300px;
+  width:500px;
   height:500px;
   padding-left:15%;
   padding-right:0;
-  padding-top:15%;
+  padding-top:5%;
 }
 .product-images {
   display: grid;
+  display:block;
   height: 100%;
   grid-gap: 1rem;
   grid-template-rows: 100%;
